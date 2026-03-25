@@ -1,78 +1,71 @@
+import json
+import logging
 import os
-from openai import OpenAI
+
 from dotenv import load_dotenv
+from openai import OpenAI
+
 from models import DiagnoseResponse
 
 load_dotenv()
 
+logger = logging.getLogger(__name__)
+
 client = OpenAI(
     api_key=os.getenv("OXLO_API_KEY"),
-    base_url=os.getenv("OXLO_BASE_URL")
+    base_url=os.getenv("OXLO_BASE_URL", "https://api.oxlo.ai/v1"),
 )
 
-CHAT_MODEL = os.getenv("CHAT_MODEL")
+CHAT_MODEL = os.getenv("CHAT_MODEL", "oxlo-chat")
+
+
+def _strip_json_fences(text: str) -> str:
+    cleaned = text.strip()
+    if cleaned.startswith("```json"):
+        cleaned = cleaned[len("```json") :].strip()
+    elif cleaned.startswith("```"):
+        cleaned = cleaned[len("```") :].strip()
+    if cleaned.endswith("```"):
+        cleaned = cleaned[:-3].strip()
+    return cleaned
+
+
+def _translate_structured_fields(payload: dict, target_language: str) -> dict:
+    if target_language != "sw":
+        return payload
+
+    prompt = (
+        "Translate ONLY the values of these keys into Swahili while keeping the same JSON structure and keys: "
+        "diagnosis_summary, treatment_plan.organic, treatment_plan.chemical, treatment_plan.cultural, "
+        "prevention_advice, yield_loss_warning, follow_up_questions. "
+        "Do not translate crop_detected, disease_identified, confidence, severity, sources_consulted, language. "
+        "Return JSON only."
+    )
+
+    response = client.chat.completions.create(
+        model=CHAT_MODEL,
+        temperature=0,
+        messages=[
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": json.dumps(payload)},
+        ],
+    )
+
+    text = response.choices[0].message.content or "{}"
+    return json.loads(_strip_json_fences(text))
 
 
 def translate_response(response: DiagnoseResponse, target_language: str) -> DiagnoseResponse:
     if target_language == "en":
         return response
-    
-    fields_to_translate = [
-        "diagnosis_summary",
-        "treatment_plan",
-        "prevention_advice",
-        "yield_loss_warning",
-        "follow_up_questions"
-    ]
-    
-    translated = response.model_copy()
-    
-    for field in fields_to_translate:
-        value = getattr(response, field)
-        if isinstance(value, str):
-            prompt = f"Translate the following text to Swahili (Swahili language code: sw). Keep it simple and natural. Only return the translated text, nothing else:\n\n{value}"
-            try:
-                resp = client.chat.completions.create(
-                    model=CHAT_MODEL,
-                    messages=[{"role": "user", "content": prompt}],
-                    max_tokens=300
-                )
-                translated_text = resp.choices[0].message.content.strip()
-                setattr(translated, field, translated_text)
-            except Exception as e:
-                print(f"Translation failed for {field}: {e}")
-        elif isinstance(value, dict):
-            # treatment_plan
-            new_dict = {}
-            for k, v in value.items():
-                prompt = f"Translate the following text to Swahili. Keep it simple. Only return the translated text:\n\n{v}"
-                try:
-                    resp = client.chat.completions.create(
-                        model=CHAT_MODEL,
-                        messages=[{"role": "user", "content": prompt}],
-                        max_tokens=200
-                    )
-                    new_dict[k] = resp.choices[0].message.content.strip()
-                except Exception as e:
-                    print(f"Translation failed for treatment_plan {k}: {e}")
-                    new_dict[k] = v
-            setattr(translated, field, new_dict)
-        elif isinstance(value, list):
-            # follow_up_questions
-            new_list = []
-            for item in value:
-                prompt = f"Translate the following text to Swahili. Keep it simple. Only return the translated text:\n\n{item}"
-                try:
-                    resp = client.chat.completions.create(
-                        model=CHAT_MODEL,
-                        messages=[{"role": "user", "content": prompt}],
-                        max_tokens=100
-                    )
-                    new_list.append(resp.choices[0].message.content.strip())
-                except Exception as e:
-                    print(f"Translation failed for question: {e}")
-                    new_list.append(item)
-            setattr(translated, field, new_list)
-    
-    translated.language = target_language
-    return translated
+
+    try:
+        as_dict = response.model_dump()
+        translated = _translate_structured_fields(as_dict, target_language)
+        translated["language"] = target_language
+        return DiagnoseResponse(**translated)
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("Translation failed: %s", exc)
+        fallback = response.model_copy()
+        fallback.language = target_language
+        return fallback

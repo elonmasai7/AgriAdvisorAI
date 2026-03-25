@@ -1,64 +1,88 @@
-import React, { useState, useCallback } from 'react';
-import { useDropzone } from 'react-dropzone';
+import { useCallback, useMemo, useState } from "react";
+import { useDropzone } from "react-dropzone";
 
-const UploadZone = ({ onFileChange }) => {
-    const [file, setFile] = useState(null);
-    const [preview, setPreview] = useState(null);
+function formatSize(sizeInBytes) {
+  if (!sizeInBytes) return "0 KB";
+  const mb = sizeInBytes / (1024 * 1024);
+  if (mb >= 1) return `${mb.toFixed(2)} MB`;
+  return `${(sizeInBytes / 1024).toFixed(1)} KB`;
+}
 
-    const onDrop = useCallback((acceptedFiles) => {
-        const selectedFile = acceptedFiles[0];
-        setFile(selectedFile);
-        onFileChange(selectedFile);
+export default function UploadZone({ onFileChange }) {
+  const [file, setFile] = useState(null);
+  const [preview, setPreview] = useState("");
 
-        const reader = new FileReader();
-        reader.onload = () => setPreview(reader.result);
-        reader.readAsDataURL(selectedFile);
-    }, [onFileChange]);
+  const onDrop = useCallback(
+    (acceptedFiles) => {
+      const selected = acceptedFiles?.[0];
+      if (!selected) return;
 
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({
-        onDrop,
-        accept: 'image/*',
-        multiple: false,
-    });
+      setFile(selected);
+      onFileChange(selected);
 
-    const clearFile = () => {
-        setFile(null);
-        setPreview(null);
-        onFileChange(null);
-    };
+      const objectUrl = URL.createObjectURL(selected);
+      setPreview(objectUrl);
+    },
+    [onFileChange],
+  );
 
-    return (
-        <div className="w-full">
-            <div
-                {...getRootProps()}
-                className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${isDragActive ? 'border-green-500 bg-green-50' : 'border-gray-300 hover:border-green-400'
-                    }`}
-            >
-                <input {...getInputProps()} />
-                {preview ? (
-                    <div className="flex flex-col items-center">
-                        <img src={preview} alt="Preview" className="w-32 h-32 object-cover rounded mb-2" />
-                        <p className="text-sm text-gray-600">{file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)</p>
-                    </div>
-                ) : (
-                    <div>
-                        <p className="text-gray-600 mb-2">
-                            {isDragActive ? 'Drop the image here...' : 'Drag & drop a crop image here, or click to select'}
-                        </p>
-                        <p className="text-sm text-gray-500">Supported formats: JPG, PNG, GIF</p>
-                    </div>
-                )}
-            </div>
-            {file && (
-                <button
-                    onClick={clearFile}
-                    className="mt-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-                >
-                    Clear Image
-                </button>
-            )}
-        </div>
-    );
-};
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    multiple: false,
+    accept: {
+      "image/*": [],
+    },
+  });
 
-export default UploadZone;
+  const borderClass = useMemo(() => {
+    return isDragActive
+      ? "border-green-500 bg-green-50"
+      : "border-gray-300 hover:border-green-400";
+  }, [isDragActive]);
+
+  const clearFile = () => {
+    setFile(null);
+    setPreview("");
+    onFileChange(null);
+  };
+
+  return (
+    <div className="space-y-3">
+      <div
+        {...getRootProps()}
+        className={`rounded-xl border-2 border-dashed p-5 text-center transition ${borderClass}`}
+      >
+        <input {...getInputProps()} />
+        {preview ? (
+          <div className="flex flex-col items-center gap-2">
+            <img
+              src={preview}
+              alt="Crop preview"
+              className="h-36 w-36 rounded-lg object-cover"
+            />
+            <p className="text-sm text-gray-700">
+              {file?.name} ({formatSize(file?.size)})
+            </p>
+          </div>
+        ) : (
+          <div className="space-y-1">
+            <p className="font-medium text-gray-700">
+              Drag and drop a crop photo, or click to upload
+            </p>
+            <p className="text-sm text-gray-500">JPG, PNG, WEBP up to camera size</p>
+          </div>
+        )}
+      </div>
+
+      {file && (
+        <button
+          type="button"
+          onClick={clearFile}
+          className="rounded-md bg-gray-200 px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-300"
+        >
+          Clear image
+        </button>
+      )}
+    </div>
+  );
+}

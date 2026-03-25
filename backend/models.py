@@ -1,33 +1,35 @@
+from typing import Any
+
 from pydantic import BaseModel
-from typing import List, Dict
 
 
 class DiagnoseRequest(BaseModel):
-    description: str  # Farmer's text description of the problem
-    language: str = "en"  # "en" or "sw" (Swahili)
+    description: str
+    language: str = "en"
 
 
 class DiagnoseResponse(BaseModel):
     crop_detected: str
     disease_identified: str
-    confidence: str  # "High", "Medium", "Low"
-    severity: str  # "Mild", "Moderate", "Severe"
-    severity_score: int  # 1–10
+    confidence: str
+    severity: str
+    severity_score: int
     diagnosis_summary: str
-    treatment_plan: Dict[str, str]  # {organic, chemical, cultural}
+    treatment_plan: dict[str, str]
     prevention_advice: str
     yield_loss_warning: str
-    follow_up_questions: List[str]
-    sources_consulted: List[str]
+    follow_up_questions: list[str]
+    sources_consulted: list[str]
     language: str
 
 
 class ChatMessage(BaseModel):
-    role: str  # "user" or "assistant"
+    role: str
     content: str
 
 
 class FollowUpRequest(BaseModel):
     message: str
-    conversation_history: List[ChatMessage]
+    conversation_history: list[ChatMessage]
     language: str = "en"
+    diagnosis_context: dict[str, Any] | None = None

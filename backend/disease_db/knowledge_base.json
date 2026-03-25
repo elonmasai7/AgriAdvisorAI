@@ -1,436 +1,338 @@
 [
-    {
-        "id": "maize-gray-leaf-spot",
-        "crop": "Maize",
-        "disease_name": "Gray Leaf Spot",
-        "also_known_as": "Cercospora Leaf Blight",
-        "symptoms": "Rectangular gray or tan lesions on leaves, running parallel to veins. Lesions have yellow halos. Severe cases cause entire leaves to dry out.",
-        "causes": "Fungal infection caused by Cercospora zeae-maydis. Favored by high humidity, warm temperatures (25–30°C), and poor air circulation.",
-        "severity_indicators": {
-            "mild": "Less than 10% of leaf area affected",
-            "moderate": "10–50% of leaf area affected",
-            "severe": "More than 50% of leaf area affected, stalks weakening"
-        },
-        "treatment": {
-            "organic": "Remove and destroy affected leaves. Apply neem oil spray (5ml per liter of water) every 7 days.",
-            "chemical": "Apply mancozeb or azoxystrobin-based fungicide. Follow label instructions. Do not apply within 14 days of harvest.",
-            "cultural": "Improve field drainage. Increase plant spacing for airflow. Rotate with non-host crops like soybean or sunflower."
-        },
-        "prevention": "Use certified disease-resistant seed varieties. Practice crop rotation. Avoid overhead irrigation. Apply fungicide preventively at tasseling stage.",
-        "yield_loss_estimate": "Can reduce yield by 30–50% if untreated during grain fill stage.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Ethiopia",
-            "Nigeria"
-        ]
+  {
+    "id": "maize-gray-leaf-spot",
+    "crop": "Maize",
+    "disease_name": "Gray Leaf Spot",
+    "also_known_as": "Cercospora Leaf Blight",
+    "symptoms": "Rectangular gray or tan lesions on leaves running parallel to veins. Lesions may show yellow halos. Severe cases cause entire leaves to dry out.",
+    "causes": "Fungal infection caused by Cercospora zeae-maydis. Favored by high humidity, warm temperatures (25-30 C), and poor air circulation.",
+    "severity_indicators": {
+      "mild": "Less than 10% of leaf area affected",
+      "moderate": "10-50% of leaf area affected",
+      "severe": "More than 50% of leaf area affected with stalk weakening"
     },
-    {
-        "id": "maize-fall-armyworm",
-        "crop": "Maize",
-        "disease_name": "Fall Armyworm",
-        "also_known_as": "Spodoptera frugiperda",
-        "symptoms": "Irregular holes in leaves, ragged edges. Larvae visible on plants, especially at night. Damage starts at the top of the plant and moves downward.",
-        "causes": "Insect pest caused by fall armyworm larvae. Migrates from warmer regions, thrives in maize fields with dense planting.",
-        "severity_indicators": {
-            "mild": "Less than 20% of leaves damaged",
-            "moderate": "20–50% of leaves damaged, some whorl damage",
-            "severe": "More than 50% of plant damaged, including tassels and ears"
-        },
-        "treatment": {
-            "organic": "Hand-pick larvae and destroy. Introduce natural predators like parasitic wasps. Apply Bacillus thuringiensis (Bt) spray.",
-            "chemical": "Apply insecticides like lambda-cyhalothrin or chlorpyrifos. Follow label instructions and safety precautions.",
-            "cultural": "Plant early to avoid peak pest migration. Use trap crops like Napier grass. Maintain field hygiene by removing crop residues."
-        },
-        "prevention": "Monitor fields regularly. Use resistant maize varieties. Practice intercropping with legumes. Avoid planting during peak migration periods.",
-        "yield_loss_estimate": "Can cause up to 70% yield loss in severe infestations if not controlled early.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Ethiopia",
-            "Nigeria",
-            "South Africa"
-        ]
+    "treatment": {
+      "organic": "Remove and destroy affected leaves. Apply neem oil spray (5 ml per liter of water) every 7 days.",
+      "chemical": "Apply mancozeb or azoxystrobin-based fungicide as labeled. Do not spray within 14 days of harvest.",
+      "cultural": "Improve field drainage, increase spacing for airflow, and rotate with non-host crops such as soybean or sunflower."
     },
-    {
-        "id": "maize-maize-streak-virus",
-        "crop": "Maize",
-        "disease_name": "Maize Streak Virus",
-        "also_known_as": "MSV",
-        "symptoms": "Yellow streaks along leaf veins, chlorotic mottling. Plants stunted, ears poorly developed. Leaves may curl or twist.",
-        "causes": "Viral infection transmitted by leafhoppers (Cicadulina spp.). Spreads rapidly in fields with high vector populations.",
-        "severity_indicators": {
-            "mild": "Few streaks on lower leaves",
-            "moderate": "Streaks on multiple leaves, slight stunting",
-            "severe": "Heavy streaking, severe stunting, no ear formation"
-        },
-        "treatment": {
-            "organic": "Remove and destroy infected plants immediately. Use reflective mulches to deter leafhoppers.",
-            "chemical": "Apply systemic insecticides to control leafhopper vectors. Use imidacloprid or thiamethoxam.",
-            "cultural": "Plant resistant varieties. Time planting to avoid peak vector activity. Use clean seed and practice crop rotation."
-        },
-        "prevention": "Use certified virus-free seed. Control weeds that harbor vectors. Apply insecticides preventively. Plant border crops to trap vectors.",
-        "yield_loss_estimate": "Can reduce yield by 20–100% depending on infection timing and severity.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Ethiopia",
-            "Zimbabwe",
-            "South Africa"
-        ]
+    "prevention": "Use certified resistant seed varieties, rotate crops, avoid overhead irrigation, and apply preventive fungicide at tasseling.",
+    "yield_loss_estimate": "Can reduce yield by 30-50% if untreated during grain filling.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Ethiopia", "Nigeria"]
+  },
+  {
+    "id": "maize-fall-armyworm",
+    "crop": "Maize",
+    "disease_name": "Fall Armyworm",
+    "also_known_as": "Spodoptera frugiperda",
+    "symptoms": "Ragged holes in leaves, windowing on young leaves, frass in plant whorls, and feeding damage on tassels and cobs.",
+    "causes": "Larval feeding by fall armyworm moth offspring. Outbreaks increase in warm weather and continuous maize production areas.",
+    "severity_indicators": {
+      "mild": "Less than 20% of plants with whorl damage",
+      "moderate": "20-50% of plants damaged with visible larvae",
+      "severe": "More than 50% of plants damaged including tassels and ears"
     },
-    {
-        "id": "maize-stalk-rot",
-        "crop": "Maize",
-        "disease_name": "Stalk Rot",
-        "also_known_as": "Diplodia Ear Rot",
-        "symptoms": "Brown discoloration at base of stalks, soft rot. Plants lodge easily. Ears may show pink mold.",
-        "causes": "Fungal infection by Fusarium or Diplodia species. Favored by wet conditions and plant stress.",
-        "severity_indicators": {
-            "mild": "Minor discoloration on lower stalks",
-            "moderate": "Rot extending up the stalk, some lodging",
-            "severe": "Complete stalk collapse, widespread lodging"
-        },
-        "treatment": {
-            "organic": "Improve soil drainage. Apply compost to strengthen plants. Remove infected residues.",
-            "chemical": "Apply fungicides like tebuconazole at tasseling. Use seed treatments with fungicides.",
-            "cultural": "Avoid over-fertilization with nitrogen. Ensure proper plant spacing. Harvest timely to reduce stress."
-        },
-        "prevention": "Use resistant varieties. Practice crop rotation. Avoid planting in low-lying areas. Apply balanced fertilizers.",
-        "yield_loss_estimate": "Can cause 10–30% yield loss due to lodging and reduced grain fill.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Ethiopia",
-            "Nigeria"
-        ]
+    "treatment": {
+      "organic": "Hand-pick larvae early, use ash or sand in whorls, and apply Bacillus thuringiensis (Bt) biopesticide.",
+      "chemical": "Use registered insecticides such as emamectin benzoate or lambda-cyhalothrin according to label and safety intervals.",
+      "cultural": "Plant early, scout weekly, destroy crop residues, and intercrop with legumes to reduce pest pressure."
     },
-    {
-        "id": "tomato-early-blight",
-        "crop": "Tomato",
-        "disease_name": "Early Blight",
-        "also_known_as": "Alternaria Leaf Spot",
-        "symptoms": "Dark brown spots with concentric rings on leaves. Yellow halos around spots. Fruit shows sunken lesions.",
-        "causes": "Fungal infection by Alternaria solani. Spreads in humid, warm conditions with poor air circulation.",
-        "severity_indicators": {
-            "mild": "Few spots on lower leaves",
-            "moderate": "Spots on multiple leaves, some defoliation",
-            "severe": "Heavy defoliation, fruit rot"
-        },
-        "treatment": {
-            "organic": "Remove affected leaves. Apply copper-based fungicide spray every 7–10 days.",
-            "chemical": "Use chlorothalonil or mancozeb fungicides. Apply as per label instructions.",
-            "cultural": "Mulch to prevent soil splash. Stake plants for better airflow. Water at base to avoid wetting leaves."
-        },
-        "prevention": "Use disease-resistant varieties. Rotate crops. Avoid overhead watering. Clean up plant debris after harvest.",
-        "yield_loss_estimate": "Can reduce yield by 20–50% in severe cases.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Ethiopia",
-            "Nigeria"
-        ]
+    "prevention": "Use pheromone traps, resistant hybrids where available, and keep fields weed-free to reduce egg-laying sites.",
+    "yield_loss_estimate": "Yield losses can reach 20-70% when control is delayed.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Ethiopia", "Nigeria"]
+  },
+  {
+    "id": "maize-maize-streak-virus",
+    "crop": "Maize",
+    "disease_name": "Maize Streak Virus",
+    "also_known_as": "MSV",
+    "symptoms": "Fine yellow streaks along veins, general chlorosis, stunted plants, and poorly filled cobs.",
+    "causes": "Virus transmitted mainly by leafhoppers (Cicadulina species), especially when young maize is infected.",
+    "severity_indicators": {
+      "mild": "Light streaking on a few leaves with little stunting",
+      "moderate": "Clear streaking on many leaves with noticeable stunting",
+      "severe": "Severe streaking, strong stunting, and poor or absent cob formation"
     },
-    {
-        "id": "tomato-late-blight",
-        "crop": "Tomato",
-        "disease_name": "Late Blight",
-        "also_known_as": "Phytophthora infestans",
-        "symptoms": "Water-soaked lesions on leaves and stems. White mold on undersides. Rapid plant collapse. Fruit shows brown rot.",
-        "causes": "Fungal-like pathogen Phytophthora infestans. Thrives in cool, wet conditions.",
-        "severity_indicators": {
-            "mild": "Small lesions on few leaves",
-            "moderate": "Lesions spreading, some stem damage",
-            "severe": "Complete plant death within days"
-        },
-        "treatment": {
-            "organic": "Remove infected plants immediately. Apply potassium bicarbonate spray.",
-            "chemical": "Use metalaxyl or mefenoxam fungicides. Apply preventively in humid areas.",
-            "cultural": "Improve drainage. Space plants for airflow. Avoid working in fields when wet."
-        },
-        "prevention": "Plant resistant varieties. Use fungicide-treated seeds. Monitor weather forecasts. Practice crop rotation.",
-        "yield_loss_estimate": "Can destroy entire crops in epidemic conditions, 100% loss possible.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Ethiopia",
-            "Rwanda"
-        ]
+    "treatment": {
+      "organic": "Rogue heavily infected plants early and remove grassy weeds that host vectors.",
+      "chemical": "Use seed treatments or targeted insecticides to suppress leafhopper vectors where locally approved.",
+      "cultural": "Plant tolerant varieties, synchronize planting in communities, and avoid late planting near old maize fields."
     },
-    {
-        "id": "tomato-bacterial-wilt",
-        "crop": "Tomato",
-        "disease_name": "Bacterial Wilt",
-        "also_known_as": "Ralstonia solanacearum",
-        "symptoms": "Sudden wilting of plants, starting with lower leaves. Brown discoloration in vascular tissues when cut. No leaf spots.",
-        "causes": "Bacterial infection spread through soil and water. Survives in soil for years.",
-        "severity_indicators": {
-            "mild": "Few plants affected",
-            "moderate": "10–30% of plants wilting",
-            "severe": "Over 50% plant loss"
-        },
-        "treatment": {
-            "organic": "Remove and destroy infected plants. Solarize soil. Use antagonistic bacteria like Pseudomonas.",
-            "chemical": "No effective chemical control. Use soil fumigants like methyl bromide in severe cases.",
-            "cultural": "Use clean transplants. Avoid planting in infected fields. Improve soil drainage."
-        },
-        "prevention": "Use resistant varieties. Practice long crop rotations (3–4 years). Disinfest tools and equipment.",
-        "yield_loss_estimate": "Can cause 20–80% yield loss depending on infection level.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Ethiopia",
-            "Nigeria"
-        ]
+    "prevention": "Use certified seed, control vector habitats, and maintain field sanitation throughout the season.",
+    "yield_loss_estimate": "Early severe infections can cause 20-100% yield loss.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Ethiopia", "Nigeria"]
+  },
+  {
+    "id": "maize-stalk-rot",
+    "crop": "Maize",
+    "disease_name": "Stalk Rot",
+    "also_known_as": "Fusarium or Diplodia Stalk Rot",
+    "symptoms": "Lower stalk browning, internal pith discoloration, weak stems, and lodging before harvest.",
+    "causes": "Fungal pathogens favored by plant stress, moisture extremes, high nitrogen imbalance, and residue carryover.",
+    "severity_indicators": {
+      "mild": "Minor basal stalk discoloration with little lodging",
+      "moderate": "Rot extends upward with some lodging",
+      "severe": "Widespread stalk collapse and major lodging"
     },
-    {
-        "id": "tomato-blossom-end-rot",
-        "crop": "Tomato",
-        "disease_name": "Blossom End Rot",
-        "also_known_as": "Calcium Deficiency",
-        "symptoms": "Dark, sunken lesions on blossom end of fruit. Fruit may crack. Not a true disease, but a physiological disorder.",
-        "causes": "Calcium deficiency in fruit due to irregular watering or high soil salinity.",
-        "severity_indicators": {
-            "mild": "Few fruits affected",
-            "moderate": "10–30% of fruits show rot",
-            "severe": "Most fruits affected, unmarketable"
-        },
-        "treatment": {
-            "organic": "Apply calcium-rich amendments like gypsum. Maintain consistent soil moisture.",
-            "chemical": "Use calcium nitrate foliar sprays. Apply as needed.",
-            "cultural": "Water regularly to avoid fluctuations. Mulch to maintain moisture. Avoid high nitrogen fertilizers."
-        },
-        "prevention": "Test soil calcium levels. Use balanced fertilizers. Maintain even watering schedule.",
-        "yield_loss_estimate": "Can reduce marketable yield by 10–40%.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Ethiopia",
-            "Nigeria"
-        ]
+    "treatment": {
+      "organic": "Improve soil organic matter and drainage, remove infected residues, and avoid plant stress.",
+      "chemical": "Use fungicide-treated seed where available and apply labeled fungicides preventively in high-risk fields.",
+      "cultural": "Balance fertilization, reduce plant stress, rotate crops, and harvest promptly once mature."
     },
-    {
-        "id": "beans-bean-rust",
-        "crop": "Beans",
-        "disease_name": "Bean Rust",
-        "also_known_as": "Uromyces appendiculatus",
-        "symptoms": "Orange to reddish-brown pustules on leaves. Yellowing and defoliation. Pods may show lesions.",
-        "causes": "Fungal infection by rust fungi. Spreads in humid conditions with moderate temperatures.",
-        "severity_indicators": {
-            "mild": "Few pustules on lower leaves",
-            "moderate": "Pustules on many leaves, some yellowing",
-            "severe": "Heavy defoliation, pod damage"
-        },
-        "treatment": {
-            "organic": "Remove infected leaves. Apply sulfur dust or neem oil.",
-            "chemical": "Use triazole fungicides like tebuconazole. Apply preventively.",
-            "cultural": "Improve airflow by proper spacing. Avoid overhead watering."
-        },
-        "prevention": "Plant resistant varieties. Practice crop rotation. Clean seed. Apply fungicides at first sign.",
-        "yield_loss_estimate": "Can reduce yield by 20–60% in susceptible varieties.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Ethiopia",
-            "Rwanda"
-        ]
+    "prevention": "Grow resistant hybrids, rotate away from maize, and maintain good nutrient and water management.",
+    "yield_loss_estimate": "Can cause 10-35% yield loss from lodging and poor grain filling.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Ethiopia", "Nigeria"]
+  },
+  {
+    "id": "tomato-early-blight",
+    "crop": "Tomato",
+    "disease_name": "Early Blight",
+    "also_known_as": "Alternaria Leaf Spot",
+    "symptoms": "Dark brown leaf lesions with concentric rings, yellowing around spots, lower leaf drop, and stem or fruit lesions.",
+    "causes": "Fungal infection by Alternaria solani, spread by rain splash and favored by warm humid conditions.",
+    "severity_indicators": {
+      "mild": "Few lesions on lower leaves",
+      "moderate": "Multiple leaves affected with noticeable defoliation",
+      "severe": "Extensive defoliation and fruit infection"
     },
-    {
-        "id": "beans-root-rot",
-        "crop": "Beans",
-        "disease_name": "Root Rot",
-        "also_known_as": "Fusarium Root Rot",
-        "symptoms": "Yellowing and wilting of plants. Brown discoloration of roots. Stunted growth.",
-        "causes": "Fungal pathogens like Fusarium and Rhizoctonia. Favored by wet soils and poor drainage.",
-        "severity_indicators": {
-            "mild": "Few plants affected, slight stunting",
-            "moderate": "10–30% plants wilting",
-            "severe": "Widespread plant death"
-        },
-        "treatment": {
-            "organic": "Improve drainage. Apply mycorrhizal fungi. Use compost.",
-            "chemical": "Use fungicide-treated seeds. Apply soil fungicides like captan.",
-            "cultural": "Avoid planting in wet areas. Rotate crops. Use raised beds."
-        },
-        "prevention": "Use resistant varieties. Practice long rotations. Ensure good soil drainage. Avoid overwatering.",
-        "yield_loss_estimate": "Can cause 10–50% yield loss depending on severity.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Ethiopia",
-            "Nigeria"
-        ]
+    "treatment": {
+      "organic": "Remove infected leaves, mulch soil, and spray copper-based fungicide or compost tea at regular intervals.",
+      "chemical": "Apply chlorothalonil, mancozeb, or azoxystrobin products as labeled.",
+      "cultural": "Stake plants, improve spacing, and irrigate at the base to keep foliage dry."
     },
-    {
-        "id": "beans-angular-leaf-spot",
-        "crop": "Beans",
-        "disease_name": "Angular Leaf Spot",
-        "also_known_as": "Pseudomonas syringae pv. phaseolicola",
-        "symptoms": "Angular, water-soaked lesions on leaves. Lesions turn brown with yellow halos. Seeds may show spots.",
-        "causes": "Bacterial infection spread by water splash and infected seeds.",
-        "severity_indicators": {
-            "mild": "Few lesions on lower leaves",
-            "moderate": "Lesions on many leaves, some defoliation",
-            "severe": "Heavy defoliation, seed infection"
-        },
-        "treatment": {
-            "organic": "Remove infected plants. Apply copper-based sprays.",
-            "chemical": "Use copper hydroxide or streptomycin. Apply as per label.",
-            "cultural": "Avoid overhead watering. Space plants for airflow. Use clean seed."
-        },
-        "prevention": "Use certified disease-free seed. Rotate crops. Avoid working in wet fields.",
-        "yield_loss_estimate": "Can reduce yield by 15–40% in affected fields.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Ethiopia",
-            "Rwanda"
-        ]
+    "prevention": "Use healthy seedlings, rotate with non-solanaceous crops, and sanitize crop residues.",
+    "yield_loss_estimate": "Can reduce yield by 20-50% in unmanaged outbreaks.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Ethiopia", "Nigeria"]
+  },
+  {
+    "id": "tomato-late-blight",
+    "crop": "Tomato",
+    "disease_name": "Late Blight",
+    "also_known_as": "Phytophthora Blight",
+    "symptoms": "Water-soaked lesions, white fungal growth on leaf undersides, stem blight, rapid canopy collapse, and brown firm fruit rot.",
+    "causes": "Oomycete pathogen Phytophthora infestans, favored by cool wet weather and prolonged leaf wetness.",
+    "severity_indicators": {
+      "mild": "Small scattered lesions on leaves",
+      "moderate": "Lesions expanding on leaves and stems",
+      "severe": "Rapid full-plant blight with major fruit loss"
     },
-    {
-        "id": "cassava-brown-streak-disease",
-        "crop": "Cassava",
-        "disease_name": "Cassava Brown Streak Disease",
-        "also_known_as": "CBSD",
-        "symptoms": "Brown streaks in storage roots. Yellowing and wilting of leaves. Necrotic lesions on stems.",
-        "causes": "Viral infection by Cassava brown streak viruses. Spread by whiteflies and infected cuttings.",
-        "severity_indicators": {
-            "mild": "Mild streaking in roots, slight leaf symptoms",
-            "moderate": "Moderate root damage, some wilting",
-            "severe": "Severe root rot, plant death"
-        },
-        "treatment": {
-            "organic": "Use clean planting material. Rogue infected plants.",
-            "chemical": "No effective chemical control. Use insecticides for vector control.",
-            "cultural": "Use resistant varieties. Practice phytosanitation. Avoid planting near infected fields."
-        },
-        "prevention": "Use virus-tested planting material. Control whitefly vectors. Plant resistant varieties.",
-        "yield_loss_estimate": "Can cause 20–70% yield loss in susceptible varieties.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Mozambique",
-            "Malawi"
-        ]
+    "treatment": {
+      "organic": "Remove infected plants immediately and apply approved copper sprays before spread intensifies.",
+      "chemical": "Use systemic and contact fungicides such as metalaxyl combinations according to local label guidance.",
+      "cultural": "Increase ventilation, avoid overhead irrigation, and avoid handling wet plants."
     },
-    {
-        "id": "cassava-mosaic-disease",
-        "crop": "Cassava",
-        "disease_name": "Cassava Mosaic Disease",
-        "also_known_as": "CMD",
-        "symptoms": "Mosaic patterns on leaves, yellowing, leaf distortion. Stunted growth. Reduced root yield.",
-        "causes": "Viral infection by Cassava mosaic begomoviruses. Spread by whiteflies and infected cuttings.",
-        "severity_indicators": {
-            "mild": "Mild mottling, slight stunting",
-            "moderate": "Moderate leaf distortion, reduced growth",
-            "severe": "Severe distortion, bushy appearance, low yield"
-        },
-        "treatment": {
-            "organic": "Remove infected plants. Use clean cuttings.",
-            "chemical": "No chemical cure. Use insecticides for whitefly control.",
-            "cultural": "Plant resistant varieties. Practice crop rotation. Control weeds."
-        },
-        "prevention": "Use virus-free planting material. Plant tolerant varieties. Manage whitefly populations.",
-        "yield_loss_estimate": "Can reduce yield by 20–90% depending on variety and infection severity.",
-        "common_regions": [
-            "Kenya",
-            "Tanzania",
-            "Uganda",
-            "Nigeria",
-            "Ghana"
-        ]
+    "prevention": "Plant certified seedlings, monitor weather alerts, and spray preventively in high-risk periods.",
+    "yield_loss_estimate": "Can cause near-total crop failure during severe epidemics.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Ethiopia", "Rwanda"]
+  },
+  {
+    "id": "tomato-bacterial-wilt",
+    "crop": "Tomato",
+    "disease_name": "Bacterial Wilt",
+    "also_known_as": "Ralstonia Wilt",
+    "symptoms": "Sudden daytime wilting that becomes permanent, brown vascular tissue, and bacterial ooze from cut stems.",
+    "causes": "Soil-borne bacterium Ralstonia solanacearum entering roots and blocking water movement.",
+    "severity_indicators": {
+      "mild": "Isolated plants wilting",
+      "moderate": "10-30% of plants affected",
+      "severe": "More than 50% of plants wilted or dead"
     },
-    {
-        "id": "wheat-stem-rust",
-        "crop": "Wheat",
-        "disease_name": "Stem Rust",
-        "also_known_as": "Puccinia graminis",
-        "symptoms": "Red to brown pustules on stems and leaves. Black telia in severe cases. Premature ripening.",
-        "causes": "Fungal infection by Puccinia graminis. Spread by wind-borne spores.",
-        "severity_indicators": {
-            "mild": "Few pustules on lower stems",
-            "moderate": "Pustules on stems and leaves",
-            "severe": "Heavy infection, lodging, shriveled grains"
-        },
-        "treatment": {
-            "organic": "Remove alternate hosts. Apply sulfur dust.",
-            "chemical": "Use triazole fungicides like propiconazole. Apply at flag leaf stage.",
-            "cultural": "Plant resistant varieties. Practice crop rotation."
-        },
-        "prevention": "Use rust-resistant wheat varieties. Monitor fields. Apply fungicides preventively in high-risk areas.",
-        "yield_loss_estimate": "Can cause 10–70% yield loss in epidemics.",
-        "common_regions": [
-            "Kenya",
-            "Ethiopia",
-            "Uganda",
-            "Tanzania",
-            "Rwanda"
-        ]
+    "treatment": {
+      "organic": "Uproot infected plants with surrounding soil and disinfect tools and irrigation channels.",
+      "chemical": "No reliable curative spray exists; focus on soil and vector hygiene practices.",
+      "cultural": "Use raised beds, improve drainage, rotate for at least 2-3 seasons, and graft onto tolerant rootstocks where possible."
     },
-    {
-        "id": "wheat-yellow-rust",
-        "crop": "Wheat",
-        "disease_name": "Yellow Rust",
-        "also_known_as": "Stripe Rust",
-        "symptoms": "Yellow stripes on leaves parallel to veins. Pustules with yellow spores. Severe defoliation.",
-        "causes": "Fungal infection by Puccinia striiformis. Thrives in cool, humid conditions.",
-        "severity_indicators": {
-            "mild": "Few stripes on lower leaves",
-            "moderate": "Stripes on multiple leaves",
-            "severe": "Heavy defoliation, reduced tillering"
-        },
-        "treatment": {
-            "organic": "Apply sulfur or neem oil sprays.",
-            "chemical": "Use fungicides like tebuconazole or azoxystrobin. Apply at first sign.",
-            "cultural": "Plant resistant varieties. Avoid dense planting."
-        },
-        "prevention": "Use resistant varieties. Monitor weather. Apply fungicides preventively.",
-        "yield_loss_estimate": "Can reduce yield by 20–60% in susceptible varieties.",
-        "common_regions": [
-            "Kenya",
-            "Ethiopia",
-            "Tanzania",
-            "Uganda",
-            "Rwanda"
-        ]
+    "prevention": "Use disease-free seedlings, avoid contaminated water sources, and manage field sanitation strictly.",
+    "yield_loss_estimate": "Can cause 20-80% loss in warm, poorly drained soils.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Ethiopia", "Nigeria"]
+  },
+  {
+    "id": "tomato-blossom-end-rot",
+    "crop": "Tomato",
+    "disease_name": "Blossom End Rot",
+    "also_known_as": "Calcium Imbalance Disorder",
+    "symptoms": "Dark sunken patch at the blossom end of fruit, tissue collapse, and secondary rot in affected fruits.",
+    "causes": "Physiological disorder from poor calcium movement, usually due to irregular watering, root stress, or salinity.",
+    "severity_indicators": {
+      "mild": "Few fruits with small end lesions",
+      "moderate": "10-30% of fruits affected",
+      "severe": "Large share of harvest unmarketable"
     },
-    {
-        "id": "wheat-powdery-mildew",
-        "crop": "Wheat",
-        "disease_name": "Powdery Mildew",
-        "also_known_as": "Blumeria graminis",
-        "symptoms": "White, powdery coating on leaves and stems. Yellowing and curling of leaves. Reduced grain fill.",
-        "causes": "Fungal infection by Blumeria graminis. Favored by high humidity and moderate temperatures.",
-        "severity_indicators": {
-            "mild": "Powdery patches on lower leaves",
-            "moderate": "Powdery coating on upper leaves",
-            "severe": "Heavy mildew, premature leaf death"
-        },
-        "treatment": {
-            "organic": "Apply sulfur dust or bicarbonate sprays.",
-            "chemical": "Use fungicides like triadimefon or myclobutanil.",
-            "cultural": "Improve airflow. Avoid overhead irrigation."
-        },
-        "prevention": "Plant resistant varieties. Practice crop rotation. Monitor humidity levels.",
-        "yield_loss_estimate": "Can cause 5–30% yield loss in severe cases.",
-        "common_regions": [
-            "Kenya",
-            "Ethiopia",
-            "Tanzania",
-            "Uganda",
-            "Rwanda"
-        ]
-    }
+    "treatment": {
+      "organic": "Maintain even watering and add calcium-rich amendments such as gypsum where soil tests indicate deficiency.",
+      "chemical": "Use calcium nitrate foliar feeding or fertigation support as recommended by local agronomists.",
+      "cultural": "Mulch soil, avoid root disturbance, and avoid excessive ammonium nitrogen."
+    },
+    "prevention": "Keep consistent irrigation, monitor soil EC and pH, and use balanced fertility from early flowering.",
+    "yield_loss_estimate": "Can reduce marketable yield by 10-40%.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Ethiopia", "Nigeria"]
+  },
+  {
+    "id": "beans-bean-rust",
+    "crop": "Beans",
+    "disease_name": "Bean Rust",
+    "also_known_as": "Uromyces Rust",
+    "symptoms": "Small white flecks that become orange-brown pustules on leaves, followed by yellowing and early defoliation.",
+    "causes": "Fungal infection by Uromyces appendiculatus under humid conditions and moderate temperatures.",
+    "severity_indicators": {
+      "mild": "Scattered pustules on lower leaves",
+      "moderate": "Pustules widespread with leaf yellowing",
+      "severe": "Heavy defoliation and pod damage"
+    },
+    "treatment": {
+      "organic": "Remove heavily infected leaves and apply sulfur-based or neem-based products early.",
+      "chemical": "Use triazole or strobilurin fungicides as labeled at first symptoms.",
+      "cultural": "Improve airflow with spacing, avoid overhead irrigation, and remove crop residues after harvest."
+    },
+    "prevention": "Plant resistant varieties and rotate with non-host crops between bean seasons.",
+    "yield_loss_estimate": "Can reduce yield by 20-60% in susceptible varieties.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Ethiopia", "Rwanda"]
+  },
+  {
+    "id": "beans-root-rot",
+    "crop": "Beans",
+    "disease_name": "Root Rot",
+    "also_known_as": "Fusarium or Rhizoctonia Root Rot",
+    "symptoms": "Poor emergence, yellowing, wilting, root browning, and plant stunting that worsens in wet patches.",
+    "causes": "Soil-borne fungi such as Fusarium solani and Rhizoctonia solani, especially in compacted or waterlogged soils.",
+    "severity_indicators": {
+      "mild": "Small patches with weak plants",
+      "moderate": "10-30% plants wilting or stunted",
+      "severe": "Large areas with plant death and poor stand"
+    },
+    "treatment": {
+      "organic": "Improve drainage, apply well-decomposed compost, and use biological seed treatments where available.",
+      "chemical": "Use fungicide seed dressing and approved soil fungicides in high-risk fields.",
+      "cultural": "Plant on raised beds, avoid overwatering, and rotate crops for multiple seasons."
+    },
+    "prevention": "Use certified seed, avoid compacted wet fields, and sanitize equipment between plots.",
+    "yield_loss_estimate": "Can lead to 10-50% loss depending on disease pressure.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Ethiopia", "Nigeria"]
+  },
+  {
+    "id": "beans-angular-leaf-spot",
+    "crop": "Beans",
+    "disease_name": "Angular Leaf Spot",
+    "also_known_as": "Pseudocercospora Leaf Spot",
+    "symptoms": "Angular brown lesions limited by leaf veins, gray center in older spots, and lesions on pods and stems.",
+    "causes": "Fungal infection by Pseudocercospora griseola spread by seed, rain splash, and infected residues.",
+    "severity_indicators": {
+      "mild": "Few angular lesions on lower foliage",
+      "moderate": "Lesions across canopy with some defoliation",
+      "severe": "Heavy defoliation and pod infection"
+    },
+    "treatment": {
+      "organic": "Remove infected debris and use copper or botanical sprays where locally validated.",
+      "chemical": "Apply recommended fungicides such as mancozeb mixtures at early symptom stages.",
+      "cultural": "Use clean seed, rotate crops, and avoid dense canopies that trap humidity."
+    },
+    "prevention": "Plant tolerant varieties and avoid saving seed from diseased fields.",
+    "yield_loss_estimate": "Can reduce yield by 15-40% under favorable disease conditions.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Ethiopia", "Rwanda"]
+  },
+  {
+    "id": "cassava-brown-streak-disease",
+    "crop": "Cassava",
+    "disease_name": "Cassava Brown Streak Disease",
+    "also_known_as": "CBSD",
+    "symptoms": "Leaf chlorosis and vein clearing, brown corky root necrosis, and stem lesions causing poor root quality.",
+    "causes": "Cassava brown streak viruses spread by infected cuttings and whitefly vectors.",
+    "severity_indicators": {
+      "mild": "Light foliar symptoms with minor root discoloration",
+      "moderate": "Clear foliar symptoms and moderate root necrosis",
+      "severe": "Extensive root necrosis and major marketable root loss"
+    },
+    "treatment": {
+      "organic": "Rogue infected plants and use only clean cuttings from trusted sources.",
+      "chemical": "No direct cure; manage whitefly with targeted insect control where justified.",
+      "cultural": "Plant tolerant varieties, sanitize planting material, and coordinate community-level disease management."
+    },
+    "prevention": "Use certified disease-free stems and monitor nurseries and new fields routinely.",
+    "yield_loss_estimate": "Can cause 20-70% yield and quality loss.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Mozambique", "Malawi"]
+  },
+  {
+    "id": "cassava-mosaic-disease",
+    "crop": "Cassava",
+    "disease_name": "Cassava Mosaic Disease",
+    "also_known_as": "CMD",
+    "symptoms": "Mosaic leaf mottling, distortion, reduced leaf size, and plant stunting with reduced root formation.",
+    "causes": "Cassava mosaic begomoviruses transmitted by whiteflies and infected stem cuttings.",
+    "severity_indicators": {
+      "mild": "Mild mosaic on younger leaves",
+      "moderate": "Distinct mosaic and moderate stunting",
+      "severe": "Severe distortion with major growth reduction"
+    },
+    "treatment": {
+      "organic": "Remove heavily infected plants and replace with healthy clean planting material.",
+      "chemical": "No curative chemical treatment exists; vector suppression can reduce spread.",
+      "cultural": "Use resistant varieties, clean seed systems, and weed management to limit whitefly habitats."
+    },
+    "prevention": "Distribute virus-free cuttings and avoid sharing stems from unknown infection status fields.",
+    "yield_loss_estimate": "Can reduce yield by 20-90% depending on variety and infection timing.",
+    "common_regions": ["Kenya", "Tanzania", "Uganda", "Nigeria", "Ghana"]
+  },
+  {
+    "id": "wheat-stem-rust",
+    "crop": "Wheat",
+    "disease_name": "Stem Rust",
+    "also_known_as": "Black Rust",
+    "symptoms": "Elongated reddish-brown pustules on stems and sheaths, later turning black, with plant weakness and shriveled grain.",
+    "causes": "Fungal disease caused by Puccinia graminis f. sp. tritici, spread by windborne spores.",
+    "severity_indicators": {
+      "mild": "Few pustules on lower stems",
+      "moderate": "Pustules on multiple stems and leaves",
+      "severe": "Heavy infection with lodging and poor grain fill"
+    },
+    "treatment": {
+      "organic": "Remove volunteer wheat and nearby alternate hosts where feasible.",
+      "chemical": "Spray effective triazole fungicides at early detection following local extension guidance.",
+      "cultural": "Use resistant varieties and avoid late planting in high-risk zones."
+    },
+    "prevention": "Adopt resistant cultivars and monitor regional rust alerts for timely action.",
+    "yield_loss_estimate": "Can cause 10-70% yield loss during severe epidemics.",
+    "common_regions": ["Kenya", "Ethiopia", "Uganda", "Tanzania", "Rwanda"]
+  },
+  {
+    "id": "wheat-yellow-rust",
+    "crop": "Wheat",
+    "disease_name": "Yellow Rust",
+    "also_known_as": "Stripe Rust",
+    "symptoms": "Yellow linear pustule stripes on leaves, reduced photosynthesis, and early leaf senescence.",
+    "causes": "Fungal pathogen Puccinia striiformis f. sp. tritici favored by cool humid weather.",
+    "severity_indicators": {
+      "mild": "Few stripe lesions on lower leaves",
+      "moderate": "Multiple stripes across canopy",
+      "severe": "Severe striping with heavy leaf drying"
+    },
+    "treatment": {
+      "organic": "Use field sanitation and remove volunteer hosts after harvest.",
+      "chemical": "Apply registered fungicides such as tebuconazole or azoxystrobin when symptoms first appear.",
+      "cultural": "Plant resistant varieties and avoid overly dense stands."
+    },
+    "prevention": "Scout frequently in cool wet periods and apply preventive fungicides when regional risk is high.",
+    "yield_loss_estimate": "Can cause 20-60% yield loss in susceptible fields.",
+    "common_regions": ["Kenya", "Ethiopia", "Tanzania", "Uganda", "Rwanda"]
+  },
+  {
+    "id": "wheat-powdery-mildew",
+    "crop": "Wheat",
+    "disease_name": "Powdery Mildew",
+    "also_known_as": "Blumeria Leaf Mildew",
+    "symptoms": "White powdery growth on leaves and stems, followed by chlorosis, necrosis, and reduced grain filling.",
+    "causes": "Fungal infection by Blumeria graminis f. sp. tritici under humid conditions and moderate temperatures.",
+    "severity_indicators": {
+      "mild": "Small white patches on lower leaves",
+      "moderate": "Powdery growth on upper canopy",
+      "severe": "Widespread mildew with premature leaf death"
+    },
+    "treatment": {
+      "organic": "Use sulfur-based products and improve canopy airflow.",
+      "chemical": "Apply labeled fungicides such as triadimefon or myclobutanil where infection pressure is high.",
+      "cultural": "Reduce excessive nitrogen, avoid dense planting, and rotate crops."
+    },
+    "prevention": "Select tolerant varieties and maintain balanced fertility and spacing.",
+    "yield_loss_estimate": "Can cause 5-30% yield loss when unmanaged.",
+    "common_regions": ["Kenya", "Ethiopia", "Tanzania", "Uganda", "Rwanda"]
+  }
 ]
