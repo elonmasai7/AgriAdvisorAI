@@ -61,9 +61,9 @@ async def startup_event() -> None:
 @app.post("/diagnose")
 async def diagnose(
     request: Request,
-    file: UploadFile | None = File(default=None),
-    description: str = Form(...),
-    language: str = Form("en"),
+    file: UploadFile | None=File(default=None),
+    description: str=Form(...),
+    language: str=Form("en"),
 ):
     client_ip = request.client.host if request.client else "unknown"
     _enforce_rate_limit(client_ip)
