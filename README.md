@@ -1,4 +1,4 @@
-# AgriAdvisor AI ??
+# AgriAdvisor AI 
 
 ## Problem Statement
 Smallholder farmers across Africa and South Asia lose a large share of harvests because crop diseases and pests are detected late or diagnosed incorrectly. Extension support is often limited, and laboratory testing is expensive or inaccessible. Farmers need fast, practical, and trustworthy advice in simple language that works with locally available inputs.
@@ -35,9 +35,9 @@ Farmer Input (Image + Text)
 - Data: Local crop disease knowledge base JSON (15+ entries)
 
 ## Oxlo.ai API Usage
-- Model 1: `${VISION_MODEL}` (configured in `.env`) — Used for crop photo analysis
-- Model 2: `${CHAT_MODEL}` (configured in `.env`) — Used for diagnosis generation, translation, and follow-up chat
-- Model 3: `${EMBED_MODEL}` (configured in `.env`) — Used for RAG embeddings and retrieval
+- Model 1: `${VISION_MODEL}` (configured in `.env`) â€” Used for crop photo analysis
+- Model 2: `${CHAT_MODEL}` (configured in `.env`) â€” Used for diagnosis generation, translation, and follow-up chat
+- Model 3: `${EMBED_MODEL}` (configured in `.env`) â€” Used for RAG embeddings and retrieval
 - API calls per session: minimum 3 (vision + embed + chat), up to 10+ for multi-turn conversations
 
 ## Features
